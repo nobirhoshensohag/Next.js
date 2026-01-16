@@ -29,7 +29,7 @@ const categories = [
     title: "Chilled Delights",
     description: "Refreshing desserts made to cool your cravings",
     icon: IceCream,
-    image: "https://images.unsplash.com/photo-1505253216365-34b58f5a2f02?w=600&h=400&fit=crop",
+    image: "https://i.ibb.co.com/TDsL71Vf/Ice-Cream.avif",
     color: "from-blue-500 to-cyan-500",
   },
 ];
