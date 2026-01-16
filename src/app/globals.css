@@ -6,6 +6,36 @@
   --foreground: #171717;
 }
 
+@layer components {
+
+  /* 1. Base style for all buttons */
+  .btn-base {
+    @apply px-6 py-3 rounded-full transition-all duration-300 flex items-center justify-center ;
+    @apply hover:-translate-y-1 active:scale-95 shadow-md
+  }
+
+  /* 2. Solid Pink Button */
+  .btn-custom {
+    @apply bg-[#EC4899] text-white;
+    @apply hover:bg-white hover:text-[#EC4899] hover:border-white hover:border ;
+  }
+
+  /* 3. Outlined White Button */
+  .btn-lineOut {
+    /* Ensure border and text are visible */
+    @apply border border-white text-white bg-transparent;
+    /* Hover state: background turns white, text turns pink */
+    @apply hover:bg-white hover:text-[#EC4899] active:scale-95;
+  }
+  .btn-login {
+    @apply  text-white rounded-full bg-[#EC4899] py-3 px-5 border hover:border  hover:border-black
+  }
+  .btn-login-mobile {
+    @apply  text-white rounded-full bg-[#EC4899] py-2 px-3 border hover:border  hover:border-black
+  }
+
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -17,6 +47,9 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary-color: #EC4899;
+    --section-color: #F472B6;
+
   }
 }
 
@@ -24,4 +57,14 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.logo-style {
+  font-family: var(--font-playfair);
+}
+
+.btn {
+  background-color: #EC4899;
+
 }
