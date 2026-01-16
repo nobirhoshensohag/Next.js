@@ -1,11 +1,87 @@
-import React from 'react';
+"use client";
 
-function Hero(props) {
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Hero() {
   return (
-    <div>
-      Hero
-    </div>
+    <section className="relative min-h-[90vh] flex items-center bg-pink-50 overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNha2V8ZW58MHx8MHx8fDA%3D)",
+        }}
+      />
+      <div className="absolute inset-0 bg-black/40" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+        {/* Left Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+        >
+          <span className="inline-block bg-pink-600 text-white px-4 py-1 rounded-full text-sm mb-4">
+            Fresh • Handmade • Delicious
+          </span>
+
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+            Celebrate Every Moment <br />
+            with <span className="text-pink-400">Sweet Cakes</span>
+          </h1>
+
+          <p className="mt-6 text-gray-200 max-w-lg">
+            From birthdays to weddings, our handcrafted cakes bring joy, flavor,
+            and elegance to every celebration.
+          </p>
+
+          <div className="mt-8 flex gap-4">
+            <Link
+              href="/cakes"
+              className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-medium transition"
+            >
+              Explore Cakes 🍰
+            </Link>
+
+            <Link
+              href="/contact"
+              className="border border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-pink-600 transition"
+            >
+              Custom Order
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Right Image Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="hidden md:flex justify-end"
+        >
+          <div className="backdrop-blur-xl bg-white/30 border border-white/40 p-4 rounded-3xl shadow-2xl max-w-sm">
+            <Image
+              src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNha2V8ZW58MHx8MHx8fDA%3D"
+              alt="Bestseller Cake"
+              width={400}
+              height={450}
+              unoptimized
+              className="rounded-2xl object-cover"
+            />
+
+            <p className="text-center mt-3 font-semibold text-pink-600">
+              Bestseller Cake 🎂
+            </p>
+          </div>
+        </motion.div>
+
+
+      </div>
+    </section>
   );
 }
 
-export default Hero;
